@@ -1,0 +1,251 @@
+@use 'base' as *;
+@use 'components' as *;
+
+main {
+    display: grid;
+    gap: 7rem;
+}
+
+.container {
+    width: 87%;
+    margin-inline: auto;
+    text-align: center;
+
+}
+
+.intro {
+    position: relative;
+    background-color: var(--clr-primary-600);
+    isolation: isolate;
+
+    &__heading {
+        font-family: var(--ff-secondary);
+        font-size: min(7vw, 1.8rem);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('../../images/bg-curvy-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: 170%;
+        background-position: bottom;
+        z-index: -1;
+    }
+
+    .container {
+        display: grid;
+        gap: 1.3rem;
+
+        @media (min-width: 600px) {
+            width: min(100%, 540px)
+        }
+    }
+}
+
+.articles {
+
+    .container {
+        display: grid;
+        gap: 7rem;
+
+        @media(min-width: 660px) {
+            grid-template-columns: 1fr 1fr;
+            width: min(90%, 965px);
+        }
+    }
+
+    .article {
+
+        &__heading {
+            margin: 2.1rem 0 0.6rem 0;
+            font-size: min(5vw, 1.5rem);
+
+        }
+
+        &__img {
+            margin-inline: auto;
+        }
+
+        &__img--security {
+            height: 78px;
+        }
+    }
+}
+
+.productive {
+    .container {
+        text-align: start;
+    }
+
+    &__img {
+        margin-bottom: 2rem;
+    }
+
+    &__text {
+        display: grid;
+        gap: 1rem;
+    }
+
+    &__heading {
+        font-size: min(4.81vw, 1.4rem)
+    }
+
+    &__link {
+        font-size: min(4vw, 1rem);
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--clr-accent-400);
+        padding-bottom: 0.3em;
+        color: var(--clr-accent-400);
+
+        &:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+
+        img {
+            width: 20px;
+            margin-left: 0.3rem;
+        }
+
+
+    }
+}
+
+
+
+.testimonials {
+    .container {
+        display: grid;
+        gap: 2rem;
+
+    }
+
+    margin-bottom: 17rem;
+
+}
+
+@media (min-width: 750px) {
+    .intro {
+        &::before {
+            background-image: url('../../images/bg-curvy-desktop.svg');
+            background-size: 100%;
+            background-position: 0% 120%;
+            z-index: -1;
+        }
+    }
+
+    .testimonials {
+        .container {
+            grid-template-columns: repeat(2, 1fr);
+
+            @media(min-width: 1000px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .testimonial:nth-of-type(1) {
+            grid-column: 1/3;
+            width: 50%;
+            justify-self: center;
+
+            @media(min-width: 1000px) {
+                grid-column: 1;
+                width: 100%;
+                justify-self: center;
+
+            }
+        }
+    }
+
+
+}
+
+@media(min-width: 700px) {
+    .productive {
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        &__img {
+            width: 52%;
+            margin-right: 4rem;
+        }
+
+        &__text {
+            width: 48%;
+        }
+
+        &__heading {
+            max-width: 400px;
+            font-size: min(4vw, 2.4rem)
+        }
+    }
+
+}
+
+.cta {
+    position: absolute;
+    inset: -23% 0 0 0;
+    height: fit-content;
+
+    @media (min-width: 760px) {
+        inset: -33% 0 0 0;
+
+    }
+
+    &__container {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
+        width: 87%;
+        margin-inline: auto;
+        border-radius: 1rem;
+        display: grid;
+        gap: 2rem;
+        background-color: var(--clr-primary-600);
+        padding: 2.5em 2em;
+        text-align: center;
+
+        @media(min-width: 660px) {
+            padding: 2.5em 4em;
+
+        }
+    }
+
+    &__heading {
+        font-size: min(5vw, 2rem);
+    }
+
+    &__form {
+        display: grid;
+        gap: 1.5rem;
+        align-items: start;
+
+        &__input {
+            display: grid;
+
+            sub {
+                color: var(--clr-accent-100);
+                justify-self: start;
+                margin-top: 0.4rem;
+                margin-left: 0.5rem;
+
+                @media(min-width: 400px) {
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
+
+    @media(min-width: 660px) {
+        width: min(90%, 1000px);
+        margin-inline: auto;
+
+        &__form {
+            grid-template-columns: 1fr 0.5fr;
+        }
+    }
+}

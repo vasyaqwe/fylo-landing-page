@@ -1,0 +1,31 @@
+@use 'base' as *;
+
+.btn {
+    margin-top: 1rem;
+    cursor: pointer;
+    background: linear-gradient(to right, var(--clr-accent-400), var(--clr-accent-500));
+    border-radius: 100vmax;
+    font-weight: 700;
+    color: #fff;
+    border: 0;
+    padding: 1em 5.5em;
+    width: auto;
+    margin-inline: auto;
+
+    &:hover {
+        background: linear-gradient(to right, var(--clr-accent-400), var(--clr-accent-400));
+    }
+
+    &:active {
+        scale: 0.99;
+    }
+
+    @media (min-width: 660px) {
+        margin-top: 0;
+    }
+}
+
+.btn--form {
+    width: 100%;
+    padding-inline: 0;
+}

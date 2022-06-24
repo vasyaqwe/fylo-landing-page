@@ -1,0 +1,23 @@
+@use 'base' as *;
+
+input {
+    padding-block: 1em;
+    padding-left: 2.5em;
+    border: 0;
+    border-radius: 100vmax;
+    width: 100%;
+
+    &::placeholder {
+        font-size: min(4vw, 0.9rem);
+        color: hsl(0, 2%, 42%);
+    }
+
+    &:focus {
+        outline: 0;
+        outline: 2px solid var(--clr-accent-500);
+    }
+}
+
+input:invalid {
+    outline-color: var(--clr-accent-100);
+}

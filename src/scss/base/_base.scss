@@ -1,0 +1,21 @@
+@use 'root' as *;
+
+body {
+    font-family: var(--ff-primary);
+    background-color: var(--clr-primary-700);
+    color: #fff;
+}
+
+li,
+p,
+small {
+    color: hsl(0, 10%, 80%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--ff-secondary);
+    letter-spacing: 0.05rem;
+}

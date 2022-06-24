@@ -1,0 +1,40 @@
+@use 'base' as *;
+
+.header {
+    background-color: var(--clr-primary-600);
+
+    .container {
+        background-color: var(--clr-primary-600);
+        padding: 2em 0;
+        display: flex;
+        justify-content: space-between;
+        width: 87%;
+        margin-inline: auto;
+    }
+
+    &__img {
+        max-width: 25%;
+    }
+}
+
+.nav {
+    &__list {
+        display: flex;
+        font-size: min(4vw, 1.05rem)
+    }
+
+    &__item {
+        font-weight: 500;
+        border-bottom: 1px solid transparent;
+        line-height: 1.2rem;
+
+        &:hover {
+            border-bottom: 1px solid #fff;
+            color: #fff;
+        }
+    }
+
+    &__item+&__item {
+        margin-left: min(5vw, 4rem);
+    }
+}
